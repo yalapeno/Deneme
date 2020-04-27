@@ -11,6 +11,7 @@ public class BuildingButton : MonoBehaviour
     {
         manager = FindObjectOfType<SelectManager>();
     }
+
     public void OnButtonClicked()
     {
         manager.SetActiveObject(buttonGameObjectPrefab);

@@ -18,6 +18,7 @@ public class Node
         this.xPos = xPos;
         this.yPos = yPos;
     }
+
     public bool GetWall()
     {
         return wall;

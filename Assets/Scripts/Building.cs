@@ -15,7 +15,12 @@ public class Building : MonoBehaviour
     {
         return buildingSize;
     }
-    public string GetBuildingName() { return buildingName; }
+
+    public string GetBuildingName()
+    {
+        return buildingName;
+    }
+
     public Soldier[] GetSoldiers()
     {
         return soldiers;

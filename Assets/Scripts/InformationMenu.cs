@@ -15,7 +15,7 @@ public class InformationMenu : MonoBehaviour
     void Start()
     {
         //Transform child = canvas.transform.Find("InformationPanel/EntityNameTextBackground/EntityNameText");
-        entityNameText = transform.Find("EntityNameTextBackground/EntityNameText").GetComponent<Text>();
+        entityNameText = transform.Find("EntityNameTextBackground/EntityNameText").GetComponent<Text>(); // TODO: Enum Paths
         entityImageImage = transform.Find("EntityImage").GetComponent<Image>();
         entityImageRectTransform = transform.Find("EntityImage").GetComponent<RectTransform>();
 
@@ -30,7 +30,7 @@ public class InformationMenu : MonoBehaviour
         AddSoldierProductionButtons(building);
     }
 
-    private void AddSoldierProductionButtons(Building building) //btn.onClick.AddListener(() => { Function(param); OtherFunction(param); });
+    private void AddSoldierProductionButtons(Building building) 
     {
         Soldier[] soldierPrefabs = building.GetSoldiers();
 
