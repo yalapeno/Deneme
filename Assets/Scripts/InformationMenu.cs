@@ -26,7 +26,11 @@ public class InformationMenu : MonoBehaviour
         entityNameText.text = building.GetBuildingName();
         Vector2 buildingSize = building.transform.GetComponent<Building>().GetBuildingSize();
         entityImageImage.sprite = building.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
-        entityImageRectTransform.sizeDelta = new Vector2(entityImageRectTransform.sizeDelta.y*(buildingSize.x/buildingSize.y), entityImageRectTransform.sizeDelta.y);
+
+        entityImageRectTransform.sizeDelta = new Vector2(
+            entityImageRectTransform.sizeDelta.y*(buildingSize.x/buildingSize.y), // Set image width consistent with height
+            entityImageRectTransform.sizeDelta.y);
+
         AddSoldierProductionButtons(building);
     }
 
@@ -48,7 +52,9 @@ public class InformationMenu : MonoBehaviour
         Sprite soldierSprite = soldierPrefabs[i].transform.GetChild(0).GetComponent<SpriteRenderer>().sprite;
         Rect spriteRect = soldierSprite.rect;
         buttonImage.sprite = soldierSprite;
-        instantiatedProduceSoldierButton.GetComponent<RectTransform>().localPosition = new Vector2(0f, 0f - i * 1.5f * spriteRect.height);
+
+        instantiatedProduceSoldierButton.GetComponent<RectTransform>().localPosition =
+            new Vector2(0f, 0f - i * 1.5f * spriteRect.height);
 
         instantiatedProduceSoldierButton.onClick.AddListener(() => { building.SpawnSoldierAtIndex(i); });
     }

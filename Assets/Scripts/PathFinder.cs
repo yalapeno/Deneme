@@ -9,8 +9,6 @@ public class PathFinder : MonoBehaviour
     Node[,] grid;
     [SerializeField] Vector2Int gridDimentions = new Vector2Int(12, 10); //TODO: custom grid size?
 
-
-
     public Vector2Int GetGridDimentions()
     {
         return gridDimentions;
